@@ -1,11 +1,10 @@
-Implemented and configured Oracle Enterprise Manager (OEM) Cloud Control 13c using a multi-tier architecture, separating the OEM Server (OMS) and the Management 
-Repository (OMR). OEM serves as a centralized GUI console for DBAs to monitor, schedule, and execute jobs across multiple databases from a single point of 
-control.
+Implemented and configured Oracle Enterprise Manager (OEM) Cloud Control 13c and installed agent on host target database using a multi-tier architecture, separating the OEM Server (OMS) and the Management Repository (OMR). OEM serves as a centralized GUI console for DBAs to monitor, schedule, and execute jobs across multiple databases from a single point of control.
 
 
 Prerequirements:
 - A dedicated server for OEM Cloud Control (OMS) installation.
 - A separate server for the Oracle Management Repository (OMR) database. Single server for database management repository OEM
+- Agent host for add and monitor database target
 
 
 
@@ -121,6 +120,81 @@ Prerequirements:
 
     <img width="1920" height="1028" alt="Screenshot (1529)" src="https://github.com/user-attachments/assets/b5e3d83e-d33f-45d4-b230-09222b990d45" />
     <img width="1920" height="1028" alt="Screenshot (1530)" src="https://github.com/user-attachments/assets/a019a1fd-09c7-4135-9b55-f15ce449a318" />
+
+
+19. Navigated to the "Add Targets Manually" feature to initiate the Management Agent installation on the target host
+
+    <img width="1920" height="1022" alt="Screenshot (1555)" src="https://github.com/user-attachments/assets/6a411870-3d36-4043-8005-c887b5be706c" />
+
+
+20. Selected the "Install Agent on Host" option to deploy the monitoring agent to the remote database server
+
+    <img width="1920" height="1031" alt="Screenshot (1557)" src="https://github.com/user-attachments/assets/67b41a7f-a474-4be8-a8de-9d6ee4c18a11" />
+
+
+21. Added the target hostname and operating system platform to establish connectivity between the OMS and the target database server
+
+    <img width="1920" height="1031" alt="Screenshot (1557)" src="https://github.com/user-attachments/assets/8d2c8168-40af-4520-95d1-4888738e2865" />
+
+
+22. Inputed the required configuration details, ensuring the installation directory was correctly specified and created at the OS level to store agent binaries and logs
+
+    <img width="1920" height="1016" alt="Screenshot (1558)" src="https://github.com/user-attachments/assets/02bf4fcb-cd95-48be-9bc8-87696bf36ca3" />
+
+
+23. Executed the deployment process and verified the agent was installed on the target host successfully without any errors
+
+    <img width="1920" height="1016" alt="Screenshot (1559)" src="https://github.com/user-attachments/assets/1c891b9d-c3d6-414d-9812-bca1a0441b51" />
+    <img width="1920" height="1024" alt="Screenshot (1560)" src="https://github.com/user-attachments/assets/3c12cc63-d80a-416f-80b4-e9604d67e60e" />
+
+
+24. Validated the host status in the OEM dashboard to ensure the new target server was "Up" and health
+
+    <img width="1920" height="1034" alt="Screenshot (1561)" src="https://github.com/user-attachments/assets/857eeb7b-aa30-4fb3-bd68-71ef0ead79a8" />
+    <img width="1920" height="1031" alt="Screenshot (1562)" src="https://github.com/user-attachments/assets/762815be-b93f-4053-b6d2-bc24c696b5fe" />
+
+
+25. Initiated the configuration for the specific database target to enable monitoring within the OEM console
+
+    <img width="1920" height="1025" alt="Screenshot (1567)" src="https://github.com/user-attachments/assets/efbae9d7-aa64-4399-bc1f-3a307ce57442" />
+    <img width="1920" height="1031" alt="Screenshot (1568)" src="https://github.com/user-attachments/assets/63277dd1-0f59-4682-bf50-4236543f5758" />
+
+
+26. Identified and added the specific database instance from the host server to be managed by OEM
+
+    <img width="1920" height="1028" alt="Screenshot (1569)" src="https://github.com/user-attachments/assets/b49ebcdb-db23-4640-b1fc-a3512e0897e4" />
+
+
+27. Configured the discovery settings for the Database, ASM, and Listener. Provided the credentials (SYSMAN or SYSDBA) to authorize monitoring
+
+    <img width="1920" height="1031" alt="Screenshot (1570)" src="https://github.com/user-attachments/assets/1e5f764b-111e-45ec-92e7-1b636e561cb2" />
+
+
+28. Confirmed the configuration was successful and verified the database instance was now listed as a managed target
+
+    <img width="1920" height="1038" alt="Screenshot (1572)" src="https://github.com/user-attachments/assets/a4735ac0-9887-4e42-94e2-dabc42bde856" />
+    <img width="1920" height="1031" alt="Screenshot (1573)" src="https://github.com/user-attachments/assets/f31a09f2-efd2-4521-950f-0948a0305c72" />
+
+
+29. Accessed the main OEM monitoring dashboard to view the real-time health and anything of the database instance
+
+    <img width="1920" height="1034" alt="Screenshot (1574)" src="https://github.com/user-attachments/assets/3a0956da-e22c-4bc9-8fb2-316bac9c93fa" />
+    <img width="1920" height="1028" alt="Screenshot (1575)" src="https://github.com/user-attachments/assets/9c21827e-d330-4c36-ace4-7b1b95a03ba3" />
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
 
 
 
